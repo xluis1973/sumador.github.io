@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 1</title>
+    <script>
+        function procesarFormulario(nro1, nro2) {
+          // Realizar alguna acción con los datos recibidos
+          num1 = parseFloat(nro1);
+          num2 = parseFloat(nro2);
+          let suma=0;
+
+
+      // Verificar si la conversión fue exitosa
+      if (!isNaN(num1) && !isNaN(num2)) {
+        // Calcular la suma
+        suma = num1 + num2;
+
+        
+          alert("La suma es:" +suma);
+        } else {
+        alert("Ingresa números válidos");
+      }
+      if(suma == '9'){
+        alert("Es 9");
+      }
+    }
+      </script>
+</head>
+<body>
+    <form onsubmit="event.preventDefault(); procesarFormulario(this.nro1.value, this.nro2.value);">
+        <label for="nro1">Ingrese un nro:</label>
+        <input type="number" id="nro1" name="nro1" step="0.01" required>
+    
+        <label for="nro2">Ingrese otro nro:</label>
+        <input type="number" id="nro2" name="nro2" step="0.01" required>
+    
+        <input type="submit" value="Procesar">
+        
+    </form>
+</body>
+</html>
